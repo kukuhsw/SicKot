@@ -1,12 +1,17 @@
-package com.hellu.lekot
+package com.hellu.lekot.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.hellu.lekot.data.Galaxy
+import com.hellu.lekot.R
 
-class ListGalaxyAdapter(private val listHero: ArrayList<Galaxy>) : RecyclerView.Adapter<ListGalaxyAdapter.ListViewHolder>() {
+class ListGalaxyAdapter(private val listGalaxy: ArrayList<Galaxy>) : RecyclerView.Adapter<ListGalaxyAdapter.ListViewHolder>() {
     private lateinit var onItemClickCallback: OnItemClickCallback
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -14,27 +19,27 @@ class ListGalaxyAdapter(private val listHero: ArrayList<Galaxy>) : RecyclerView.
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_row_hero, viewGroup, false)
+        val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.item_row_galaxy, viewGroup, false)
         return ListViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val hero = listHero[position]
+        val galaxy = listGalaxy[position]
 
         Glide.with(holder.itemView.context)
-            .load(hero.photo)
+            .load(galaxy.photo)
             .apply(RequestOptions().override(55, 55))
             .into(holder.imgPhoto)
 
-        holder.tvName.text = hero.name
-        holder.tvDetail.text = hero.detail
+        holder.tvName.text = galaxy.planetName
+        holder.tvDetail.text = galaxy.planetDetail
 
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listHero[holder.adapterPosition]) }
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listGalaxy[holder.adapterPosition]) }
     }
 
 
     override fun getItemCount(): Int {
-        return listHero.size
+        return listGalaxy.size
     }
 
 
@@ -46,6 +51,6 @@ class ListGalaxyAdapter(private val listHero: ArrayList<Galaxy>) : RecyclerView.
     }
 
     interface OnItemClickCallback {
-        fun onItemClicked(data: Hero)
+        fun onItemClicked(data: Galaxy)
     }
 }

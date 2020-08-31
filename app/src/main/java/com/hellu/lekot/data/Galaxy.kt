@@ -1,7 +1,8 @@
-package com.hellu.lekot
+package com.hellu.lekot.data
 
-data class Galaxy {
+
+data class Galaxy(
     var planetName: String = "",
     var planetDetail: String = "",
     var photo: Int = 0
-}
+)

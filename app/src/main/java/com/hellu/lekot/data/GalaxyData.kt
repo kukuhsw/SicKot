@@ -1,19 +1,20 @@
-package com.hellu.lekot
+package com.hellu.lekot.data
 
+import com.hellu.lekot.R
 import java.util.*
 
 
-object GalaxyDataData {
-    private val planetNames = arrayOf("Ahmad Dahlan",
-        "Ahmad Yani",
-        "Sutomo",
-        "Gatot Soebroto",
-        "Ki Hadjar Dewantarai",
-        "Mohammad Hatta",
-        "Soedirman",
-        "Soekarno",
-        "Soepomo",
-        "Tan Malaka")
+object GalaxyData {
+    private val planetNames = arrayOf("Sun",
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune",
+        "Pluto")
 
     private val planetDetail = arrayOf("Salah seorang ulama dan khatib terkemuka di Masjid Besar Kasultanan Yogyakarta pada masa itu, dan ibu dari K.H. Ahmad Dahlan adalah puteri dari H. Ibrahim yang juga menjabat penghulu Kesultanan Ngayogyakarta Hadiningrat pada masa itu. KH. Ahmad Dahlan telah mempelopori kebangkitan ummat Islam untuk menyadari nasibnya sebagai bangsa terjajah yang masih harus belajar dan berbuat.",
         "Jenderal TNI Anumerta Ahmad Yani (juga dieja Achmad Yani; lahir di Purworejo, Jawa Tengah, 19 Juni 1922 – meninggal di Lubang Buaya, Jakarta, 1 Oktober 1965 pada umur 43 tahun) adalah komandan Tentara Nasional Indonesia Angkatan Darat, dan dibunuh oleh anggota Gerakan 30 September saat mencoba untuk menculik dia dari rumahnya.",
@@ -36,7 +37,8 @@ object GalaxyDataData {
         R.drawable.saturn,
         R.drawable.uranus,
         R.drawable.neptune,
-        R.drawable.pluto)
+        R.drawable.pluto
+    )
 
     val listData: ArrayList<Galaxy>
         get() {
