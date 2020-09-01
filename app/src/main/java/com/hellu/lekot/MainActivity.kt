@@ -14,7 +14,7 @@ import com.hellu.lekot.data.Galaxy
 import com.hellu.lekot.data.GalaxyData
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var rvHeroes: RecyclerView
+    private lateinit var rvPlanet: RecyclerView
     private var title = "List Galaxy"
     private val list = ArrayList<Galaxy>()
 
@@ -23,22 +23,22 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setActionBarTitle(title)
 
-        rvHeroes = findViewById(R.id.rv_heroes)
-        rvHeroes.setHasFixedSize(true)
+        rvPlanet = findViewById(R.id.rv_heroes)
+        rvPlanet.setHasFixedSize(true)
 
         list.addAll(GalaxyData.listData)
         showRecyclerList()
     }
 
     private fun showRecyclerList() {
-        rvHeroes.layoutManager = LinearLayoutManager(this)
-        val listHeroAdapter = ListGalaxyAdapter(list)
-        rvHeroes.adapter = listHeroAdapter
+        rvPlanet.layoutManager = LinearLayoutManager(this)
+        val listGalaxyAdapter = ListGalaxyAdapter(list)
+        rvPlanet.adapter = listGalaxyAdapter
 
-        listHeroAdapter.setOnItemClickCallback(object : ListGalaxyAdapter.OnItemClickCallback {
+        listGalaxyAdapter.setOnItemClickCallback(object : ListGalaxyAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Galaxy) {
                 sentDataGalaxy(data)
-                showSelectedHero(data)
+                showSelectedPlanet(data)
             }
         })
     }
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showSelectedHero(galaxy: Galaxy) {
+    private fun showSelectedPlanet(galaxy: Galaxy) {
         Toast.makeText(this, "Kamu memilih " + galaxy.planetName, Toast.LENGTH_SHORT).show()
     }
 }
