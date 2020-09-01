@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun sentDataGalaxy(data: Galaxy) {
         val intent = Intent(this, DetailPlanetActivity::class.java)
-        intent.putExtra("student", data)
+        intent.putExtra("planet", data)
         startActivity(intent)
     }
 
