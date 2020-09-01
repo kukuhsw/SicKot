@@ -24,7 +24,7 @@ class DetailPlanetActivity : AppCompatActivity() {
 
         val data = intent.extras
         val galaxy = data?.getParcelable<Galaxy>("planet")
-        val planetPhoto = galaxy?.photo.toString()
+        val planetPhoto = galaxy?.photo?.toInt()
         val planetName = galaxy?.planetName.toString()
         val planetDetail = galaxy?.planetDetail.toString()
 
