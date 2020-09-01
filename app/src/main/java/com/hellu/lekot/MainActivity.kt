@@ -37,9 +37,16 @@ class MainActivity : AppCompatActivity() {
 
         listHeroAdapter.setOnItemClickCallback(object : ListGalaxyAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Galaxy) {
+                sentDataGalaxy(data)
                 showSelectedHero(data)
             }
         })
+    }
+
+    private fun sentDataGalaxy(data: Galaxy) {
+        val intent = Intent(this, DetailPlanetActivity::class.java)
+        intent.putExtra("student", data)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
