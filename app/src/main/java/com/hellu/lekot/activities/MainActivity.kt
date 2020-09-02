@@ -19,6 +19,7 @@ import com.hellu.lekot.data.Galaxy
 import com.hellu.lekot.data.GalaxyData
 import com.hellu.lekot.data.Planet
 import kotlinx.android.synthetic.main.activity_main.*
+import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvPlanet: RecyclerView
@@ -76,7 +77,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun sentDataGalaxy(data: Galaxy) {
         val intent = Intent(this, DetailPlanetActivity::class.java)
-        intent.putExtra("planet", data)
+        intent.putExtra("galaxy", data)
         startActivity(intent)
     }
 
@@ -137,7 +138,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun sentDataPlanet(data: Planet) {
         val intent = Intent(this, DetailPlanetActivity::class.java)
-        intent.putExtra("planet", data)
+        intent.putExtra("planet", data as Serializable)
         startActivity(intent)
     }
 

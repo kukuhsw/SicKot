@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.hellu.lekot.R
 import com.hellu.lekot.data.Galaxy
+import com.hellu.lekot.data.Planet
 
 class DetailPlanetActivity : AppCompatActivity() {
 
@@ -23,17 +24,31 @@ class DetailPlanetActivity : AppCompatActivity() {
         val textDescription: TextView = findViewById(R.id.planet_description)
 
         val data = intent.extras
-        val galaxy = data?.getParcelable<Galaxy>("planet")
+        val galaxy = data?.getParcelable<Galaxy>("galaxy")
         val planetPhoto = galaxy?.photo?.toInt()
         val planetName = galaxy?.planetName.toString()
         val planetDetail = galaxy?.planetDetail.toString()
 
-        textPlanet.text = planetName
+//        textPlanet.text = planetName
+//        Glide.with(this)
+//            .load(planetPhoto)
+//            .apply(RequestOptions())
+//            .into(imgPlanet)
+//        textDescription.text = planetDetail
+
+
+        val people = intent.getSerializableExtra("planet") as? Planet
+        val pPhoto = people?.photo?.toInt()
+        val pName = people?.name.toString()
+        val pDetail = people?.address.toString()
+
+        textPlanet.text = pName
         Glide.with(this)
-            .load(planetPhoto)
+            .load(pPhoto)
             .apply(RequestOptions())
             .into(imgPlanet)
-        textDescription.text = planetDetail
+        textDescription.text = pDetail
+
 
     }
 
