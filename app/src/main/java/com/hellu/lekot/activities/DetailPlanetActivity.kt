@@ -1,12 +1,12 @@
-package com.hellu.lekot
+package com.hellu.lekot.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.hellu.lekot.R
 import com.hellu.lekot.data.Galaxy
 
 class DetailPlanetActivity : AppCompatActivity() {

@@ -9,11 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileActivity"></activity>
-        <activity android:name=".DetailPlanetActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.ProfileActivity"></activity>
+        <activity android:name=".activities.DetailPlanetActivity" />
+        <activity android:name=".activities.MainActivity" />
         <activity
-            android:name=".SplashscreenActivity"
+            android:name=".activities.SplashscreenActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

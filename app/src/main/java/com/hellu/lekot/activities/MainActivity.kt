@@ -1,4 +1,4 @@
-package com.hellu.lekot
+package com.hellu.lekot.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.hellu.lekot.R
 import com.hellu.lekot.adapter.ListGalaxyAdapter
 import com.hellu.lekot.data.Galaxy
 import com.hellu.lekot.data.GalaxyData
