@@ -5,49 +5,50 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
+    android:padding="5dp"
     app:cardCornerRadius="6dp"
-    app:cardElevation="6dp"
+    app:cardElevation="2dp"
     app:cardUseCompatPadding="true"
-    android:padding="3dp">
+    >
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="100dp">
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img_item_photo"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:layout_marginEnd="16dp"
-        android:layout_centerVertical="true"
-        tools:src="@android:color/darker_gray" />
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@id/img_item_photo"
-        android:orientation="vertical">
+        android:layout_height="100dp">
 
-        <TextView
-            android:id="@+id/tv_item_name"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_item_photo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginEnd="16dp"
+            android:layout_centerVertical="true"
+            tools:src="@android:color/darker_gray" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:text="@string/planet_name" />
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/img_item_photo"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_item_detail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingEnd="4dp"
-            android:ellipsize="end"
-            android:maxLines="2"
-            tools:text="@string/detail" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:text="@string/planet_name" />
 
-</RelativeLayout>
+            <TextView
+                android:id="@+id/tv_item_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="4dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                tools:text="@string/detail" />
+        </LinearLayout>
+
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

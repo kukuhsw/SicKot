@@ -8,10 +8,29 @@
     android:id="@+id/activity_main"
     tools:context=".activities.MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_heroes"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item_row_galaxy" />
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search.."
+            android:textColor="@color/colorPrimary"
+            android:layout_alignParentTop="true"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_heroes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_row_galaxy"
+            android:layout_below="@id/editTextSearch"
+            />
+
+
+    </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
