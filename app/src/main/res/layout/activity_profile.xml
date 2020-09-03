@@ -9,48 +9,58 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="220dp"
         app:cardBackgroundColor="#fece2f"
         app:cardElevation="10dp"
         android:layout_margin="10dp"
         >
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_gravity="center"
-            android:layout_height="150dp"
-            android:src="@drawable/profilekukuh"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FF000000"/>
+            android:layout_height="wrap_content"
+
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="match_parent"
+                android:layout_gravity="center"
+                android:layout_height="150dp"
+                android:src="@drawable/profilekukuh"
+                android:background="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_name"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:fontFamily="@font/museosans"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/profile_image"
+                />
+
+            <TextView
+                android:id="@+id/profile_job"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/profile_job"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:fontFamily="@font/museosans"
+                android:textSize="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_below="@id/profile_name"
+                />
+
+        </RelativeLayout>
+
+
 
     </androidx.cardview.widget.CardView>
 
-
-
-    <TextView
-        android:id="@+id/profile_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_name"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textSize="35dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/cardView"
-        />
-
-    <TextView
-        android:id="@+id/profile_job"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/profile_job"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textSize="35dp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@id/profile_name"
-        />
 
     <TextView
         android:id="@+id/profile_description"
@@ -61,7 +71,6 @@
         android:textAlignment="center"
         android:textSize="20dp"
         android:textStyle="bold"
-        android:layout_below="@id/profile_job"
         />
 
 </RelativeLayout>
