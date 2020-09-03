@@ -3,20 +3,20 @@
     <item android:state_pressed="false" >
         <shape>
             <solid
-                android:color="#6bcdfd" />
+                android:color="#D8F7FD" />
             <stroke
                 android:width="1px"
-                android:color="#45a9da" />
+                android:color="#B0EFFB" />
             <corners android:radius="20dp" />
         </shape>
     </item>
     <item android:state_pressed="true" >
         <shape>
             <solid
-                android:color="#ba78e7" />
+                android:color="#3AD7F5" />
             <stroke
                 android:width="1px"
-                android:color="#ad60e1" />
+                android:color="#12CFF3" />
             <corners android:radius="20dp" />
         </shape>
     </item>

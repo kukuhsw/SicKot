@@ -22,6 +22,7 @@
             android:layout_marginEnd="10dp"
             android:textAlignment="center"
             android:hint="Ketikan yang dicari..."
+            android:fontFamily="@font/museosans"
             android:background="@drawable/button"
             android:textColor="@color/colorPrimary"
             android:layout_alignParentTop="true"/>
