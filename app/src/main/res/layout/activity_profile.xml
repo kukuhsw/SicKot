@@ -12,7 +12,7 @@
         android:layout_height="220dp"
         app:cardBackgroundColor="#fece2f"
         app:cardElevation="10dp"
-        android:layout_margin="10dp"
+        android:layout_margin="30dp"
         >
 
         <RelativeLayout
@@ -24,6 +24,8 @@
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profile_image"
                 android:layout_width="match_parent"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:layout_gravity="center"
                 android:layout_height="150dp"
                 android:src="@drawable/profilekukuh"
@@ -57,20 +59,36 @@
 
         </RelativeLayout>
 
-
-
     </androidx.cardview.widget.CardView>
 
-
-    <TextView
-        android:id="@+id/profile_description"
+    <net.theluckycoder.expandablecardview.ExpandableCardView
+        android:id="@+id/card_skill"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="@string/profile_description"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:title="Skill"
+        app:description="Kotlin, Java"
+        app:expanded="true"
+        app:expand_duration="300"
+        android:layout_below="@id/cardView"
+        />
+
+    <net.theluckycoder.expandablecardview.ExpandableCardView
+        android:id="@+id/card_hoby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        app:title="Skill"
+        app:description="Kotlin, Java"
+        app:expanded="true"
+        app:expand_duration="300"
+        android:layout_below="@id/card_skill"
         />
 
 </RelativeLayout>

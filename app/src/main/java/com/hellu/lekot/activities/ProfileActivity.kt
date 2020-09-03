@@ -7,9 +7,11 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewOutlineProvider
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
 import com.hellu.lekot.R
+import net.theluckycoder.expandablecardview.ExpandableCardView
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -20,6 +22,8 @@ class ProfileActivity : AppCompatActivity() {
         actionbar!!.title = "Profile"
         actionbar.setDisplayHomeAsUpEnabled(true)
 
+        val cardSkill = findViewById<ExpandableCardView>(R.id.card_skill)
+        val cardHoby = findViewById<ExpandableCardView>(R.id.card_hoby)
         val image = findViewById<CardView>(R.id.cardView)
         val curveRadius = 40F
 
@@ -37,6 +41,17 @@ class ProfileActivity : AppCompatActivity() {
 
         }
 
+        cardSkill.cardTitle = "Skill"
+        cardSkill.cardDescription = "Kotlin Java"
+        cardSkill.setAction("Action", View.OnClickListener {
+            Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show()
+        })
+
+        cardHoby.cardTitle = "Hoby"
+        cardHoby.cardDescription = "Basket, Badminton, Swimming"
+        cardHoby.setAction("Action", View.OnClickListener {
+            Toast.makeText(this, "Button Clicked", Toast.LENGTH_SHORT).show()
+        })
 
     }
 
