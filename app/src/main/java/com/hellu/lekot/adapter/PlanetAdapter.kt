@@ -3,7 +3,6 @@ package com.hellu.lekot.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -27,7 +26,6 @@ class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(userList[position])
-        //Custom OnClickListener Event
         holder.itemView.setOnClickListener(View.OnClickListener {
             if (listener != null) {
                 listener!!.onClickEvent(userList[position])

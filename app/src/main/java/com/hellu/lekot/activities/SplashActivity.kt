@@ -19,11 +19,8 @@ class SplashActivity : AppCompatActivity() {
                 startActivity(Intent(this@SplashActivity, MainActivity::class.java))
                 finish()
             }
-
             override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) { }
-
             override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) { }
-
             override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) { }
         })
     }

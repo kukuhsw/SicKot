@@ -41,7 +41,6 @@ class MainActivity : AppCompatActivity() {
         getUserList()
 
         editTextSearch.afterTextChanged { filter(it.toString()) }
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -51,7 +50,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val id = item.getItemId()
-
         if (id == R.id.action_profile) {
             val moveIntent = Intent(this@MainActivity, ProfileActivity::class.java)
             startActivity(moveIntent)
@@ -88,5 +86,4 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("planet", data as Serializable)
         startActivity(intent)
     }
-
 }
