@@ -30,22 +30,23 @@
                 android:src="@drawable/sun"
                 />
 
+            <TextView
+                android:id="@+id/planet_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:fontFamily="@font/museosans"
+                android:textSize="20dp"
+                android:layout_below="@+id/planet_photo"
+                android:layout_marginBottom="10dp"
+                />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/planet_photo"
+                android:layout_below="@+id/planet_name"
                 android:background="@color/blueSky">
-
-                <TextView
-                    android:id="@+id/planet_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/museosans"
-                    android:textSize="20dp"
-                    android:layout_margin="10dp"
-                    />
 
                 <TextView
                     android:id="@+id/planet_description"
@@ -54,7 +55,6 @@
                     android:textAlignment="center"
                     android:textSize="15dp"
                     android:fontFamily="@font/museosans"
-                    android:layout_below="@+id/planet_name"
                     android:layout_margin="10dp"
                     />
 
