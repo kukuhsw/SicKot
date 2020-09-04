@@ -15,6 +15,8 @@ import com.hellu.lekot.OnClickListener
 import com.hellu.lekot.R
 import com.hellu.lekot.adapter.PlanetAdapter
 import com.hellu.lekot.data.Planet
+import com.hellu.lekot.ext.afterTextChanged
+import com.hellu.lekot.ext.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
 
@@ -31,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.let {
             it.title = "Home"
-            it.setDisplayHomeAsUpEnabled(true)
         }
 
         rvPlanet = findViewById(R.id.rv_heroes)
@@ -39,17 +40,8 @@ class MainActivity : AppCompatActivity() {
 
         getUserList()
 
-        editTextSearch.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-            }
+        editTextSearch.afterTextChanged { filter(it.toString()) }
 
-            override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-            }
-
-            override fun afterTextChanged(editable: Editable) {
-                filter(editable.toString())
-            }
-        })
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -87,7 +79,7 @@ class MainActivity : AppCompatActivity() {
     private val listener = object : OnClickListener {
         override fun onClickEvent(user: Planet) {
             sentDataPlanet(user)
-            Toast.makeText(applicationContext, user.name, Toast.LENGTH_SHORT).show()
+            showToast(user.name, Toast.LENGTH_SHORT)
         }
     }
 

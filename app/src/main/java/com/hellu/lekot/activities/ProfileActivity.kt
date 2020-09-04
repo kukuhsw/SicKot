@@ -26,6 +26,8 @@ class ProfileActivity : AppCompatActivity() {
 
         val imgProfile = findViewById<CircleImageView>(R.id.profile_image)
         val cardSkill = findViewById<ExpandableCardView>(R.id.card_skill)
+        val cardCertificate = findViewById<ExpandableCardView>(R.id.card_certificate)
+        val cardAward = findViewById<ExpandableCardView>(R.id.card_award)
         val cardHoby = findViewById<ExpandableCardView>(R.id.card_hoby)
         val image = findViewById<CardView>(R.id.cardView)
         val curveRadius = 40F
@@ -45,6 +47,10 @@ class ProfileActivity : AppCompatActivity() {
 
         cardSkill.cardTitle = "Skill"
         cardSkill.cardDescription = "Kotlin Java"
+        cardCertificate.cardTitle = "Certificate"
+        cardCertificate.cardDescription = "IoT Architect, Flutter Expert, Golang Advance, Pengembangan ML"
+        cardAward.cardTitle = "Award"
+        cardAward.cardDescription = "Mawapres Vokasi IPB, 1st Thinkubator"
         cardHoby.cardTitle = "Hoby"
         cardHoby.cardDescription = "Basket, Badminton, Swimming"
 

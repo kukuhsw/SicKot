@@ -35,8 +35,6 @@ class DetailPlanetActivity : AppCompatActivity() {
             .apply(RequestOptions())
             .into(imgPlanet)
         textDescription.text = pDetail
-
-
     }
 
     override fun onSupportNavigateUp(): Boolean {
