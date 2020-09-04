@@ -14,9 +14,11 @@ class DetailPlanetActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_planet)
-        val actionbar = supportActionBar
-        actionbar!!.title = "Detail Planet"
-        actionbar.setDisplayHomeAsUpEnabled(true)
+
+        supportActionBar?.let {
+            it.title = "Detail Planet"
+            it.setDisplayHomeAsUpEnabled(true)
+        }
 
         val textPlanet: TextView = findViewById(R.id.planet_name)
         val imgPlanet: ImageView = findViewById(R.id.planet_photo)

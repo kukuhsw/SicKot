@@ -20,7 +20,6 @@ import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvPlanet: RecyclerView
-    private var title = "List Galaxy"
 
 //    add
     private var myAdapter: PlanetAdapter? = null
@@ -29,16 +28,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setActionBarTitle(title)
+
+        supportActionBar?.let {
+            it.title = "Home"
+            it.setDisplayHomeAsUpEnabled(true)
+        }
 
         rvPlanet = findViewById(R.id.rv_heroes)
         rvPlanet.setHasFixedSize(true)
 
-
-        //Display UserList
         getUserList()
 
-        //adding a TextChangedListener to call a method whenever there is some change on the EditText
         editTextSearch.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
             }
@@ -47,13 +47,9 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun afterTextChanged(editable: Editable) {
-                //after the change calling the method and passing the search input
                 filter(editable.toString())
             }
         })
-
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -72,14 +68,6 @@ class MainActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun setActionBarTitle(title: String) {
-        if (supportActionBar != null) {
-            (supportActionBar as ActionBar).title = title
-        }
-    }
-
-
-    //    addd
     private fun getUserList() {
         rvPlanet.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         users = Planet.getPlanetList()
@@ -89,14 +77,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun filter(text: String) {
-        //new array list that will hold the filtered data
         val filteredNames = ArrayList<Planet>()
-        //looping through existing elements and adding the element to filtered list
         users.filterTo(filteredNames) {
-            //if the existing elements contains the search input
             it.name.toLowerCase().contains(text.toLowerCase())
         }
-        //calling a method of the adapter class and passing the filtered list
         myAdapter!!.filterList(filteredNames)
     }
 
