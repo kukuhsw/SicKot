@@ -71,7 +71,7 @@
         android:layout_marginRight="20dp"
         app:title="Skill"
         app:description="Kotlin, Java"
-        app:expanded="true"
+        app:expanded="false"
         app:expand_duration="300"
         android:layout_below="@id/cardView"
         />
@@ -86,7 +86,7 @@
         android:layout_marginRight="20dp"
         app:title="Skill"
         app:description="Kotlin, Java"
-        app:expanded="true"
+        app:expanded="false"
         app:expand_duration="300"
         android:layout_below="@id/card_skill"
         />

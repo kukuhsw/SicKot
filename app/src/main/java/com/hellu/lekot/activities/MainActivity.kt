@@ -13,10 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hellu.lekot.OnClickListener
 import com.hellu.lekot.R
-import com.hellu.lekot.adapter.ListGalaxyAdapter
 import com.hellu.lekot.adapter.PlanetAdapter
-import com.hellu.lekot.data.Galaxy
-import com.hellu.lekot.data.GalaxyData
 import com.hellu.lekot.data.Planet
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
@@ -24,7 +21,6 @@ import java.io.Serializable
 class MainActivity : AppCompatActivity() {
     private lateinit var rvPlanet: RecyclerView
     private var title = "List Galaxy"
-    private val list = ArrayList<Galaxy>()
 
 //    add
     private var myAdapter: PlanetAdapter? = null
@@ -38,8 +34,6 @@ class MainActivity : AppCompatActivity() {
         rvPlanet = findViewById(R.id.rv_heroes)
         rvPlanet.setHasFixedSize(true)
 
-        list.addAll(GalaxyData.listData)
-//        showRecyclerList()
 
         //Display UserList
         getUserList()
@@ -62,25 +56,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun showRecyclerList() {
-        rvPlanet.layoutManager = LinearLayoutManager(this)
-        val listGalaxyAdapter = ListGalaxyAdapter(list)
-        rvPlanet.adapter = listGalaxyAdapter
-
-        listGalaxyAdapter.setOnItemClickCallback(object : ListGalaxyAdapter.OnItemClickCallback {
-            override fun onItemClicked(data: Galaxy) {
-                sentDataGalaxy(data)
-                showSelectedPlanet(data)
-            }
-        })
-    }
-
-    private fun sentDataGalaxy(data: Galaxy) {
-        val intent = Intent(this, DetailPlanetActivity::class.java)
-        intent.putExtra("galaxy", data)
-        startActivity(intent)
-    }
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
@@ -101,10 +76,6 @@ class MainActivity : AppCompatActivity() {
         if (supportActionBar != null) {
             (supportActionBar as ActionBar).title = title
         }
-    }
-
-    private fun showSelectedPlanet(galaxy: Galaxy) {
-        Toast.makeText(this, "Kamu memilih " + galaxy.planetName, Toast.LENGTH_SHORT).show()
     }
 
 

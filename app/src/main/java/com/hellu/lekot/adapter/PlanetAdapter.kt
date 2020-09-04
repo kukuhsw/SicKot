@@ -13,9 +13,7 @@ import com.hellu.lekot.OnClickListener
 import com.hellu.lekot.data.Planet
 import de.hdodenhof.circleimageview.CircleImageView
 
-/**
- * Created by Govind on 3/19/2018.
- */
+
 class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adapter<PlanetAdapter.ViewHolder>() {
     private var listener: OnClickListener? = null
 
@@ -57,9 +55,6 @@ class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adap
         }
     }
 
-    /*This method will filter the list and here we are passing the filtered data
-        and assigning it to the list with notifyDataSetChanged method
-    */
     fun filterList(filteredNames: ArrayList<Planet>) {
         this.userList = filteredNames
         notifyDataSetChanged()
