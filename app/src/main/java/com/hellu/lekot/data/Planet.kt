@@ -20,6 +20,8 @@ class Planet(val name: String, val address: String, val photo: Int, val surfaceT
             R.drawable.pluto
         )
 
+
+
         fun getPlanetList(): ArrayList<Planet> {
             val planets = ArrayList<Planet>()
             planets.clear()
