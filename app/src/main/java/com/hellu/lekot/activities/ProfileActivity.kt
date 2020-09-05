@@ -48,16 +48,16 @@ class ProfileActivity : AppCompatActivity() {
 
         cardSkill.cardTitle = "Skill"
         cardSkill.cardDescription = "Kotlin Java"
-        cardSkill.setBackgroundColor(Color.parseColor("#B3FFAB"))
+        cardSkill.setBackgroundColor(Color.parseColor("#9796f0"))
         cardCertificate.cardTitle = "Certificate"
         cardCertificate.cardDescription = "IoT Architect, Flutter Expert, Golang Advance, Pengembangan ML"
-        cardCertificate.setBackgroundColor(Color.parseColor("#9796f0"))
+        cardCertificate.setBackgroundColor(Color.parseColor("#ffcc33"))
         cardAward.cardTitle = "Award"
         cardAward.cardDescription = "Mawapres Vokasi IPB, 1st Thinkubator"
-        cardAward.setBackgroundColor(Color.parseColor("#ffcc33"))
+        cardAward.setBackgroundColor(Color.parseColor("#fd746c"))
         cardHoby.cardTitle = "Hoby"
         cardHoby.cardDescription = "Basket, Badminton, Swimming"
-        cardHoby.setBackgroundColor(Color.parseColor("#fd746c"))
+        cardHoby.setBackgroundColor(Color.parseColor("#B3FFAB"))
 
     }
 
