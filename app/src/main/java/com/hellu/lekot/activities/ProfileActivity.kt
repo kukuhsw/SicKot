@@ -1,5 +1,6 @@
 package com.hellu.lekot.activities
 
+import android.graphics.Color
 import android.graphics.Outline
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -47,12 +48,16 @@ class ProfileActivity : AppCompatActivity() {
 
         cardSkill.cardTitle = "Skill"
         cardSkill.cardDescription = "Kotlin Java"
+        cardSkill.setBackgroundColor(Color.parseColor("#B3FFAB"))
         cardCertificate.cardTitle = "Certificate"
         cardCertificate.cardDescription = "IoT Architect, Flutter Expert, Golang Advance, Pengembangan ML"
+        cardCertificate.setBackgroundColor(Color.parseColor("#9796f0"))
         cardAward.cardTitle = "Award"
         cardAward.cardDescription = "Mawapres Vokasi IPB, 1st Thinkubator"
+        cardAward.setBackgroundColor(Color.parseColor("#ffcc33"))
         cardHoby.cardTitle = "Hoby"
         cardHoby.cardDescription = "Basket, Badminton, Swimming"
+        cardHoby.setBackgroundColor(Color.parseColor("#fd746c"))
 
     }
 

@@ -24,10 +24,23 @@ class DetailPlanetActivity : AppCompatActivity() {
         val imgPlanet: ImageView = findViewById(R.id.planet_photo)
         val textDescription: TextView = findViewById(R.id.planet_description)
 
+//        inisialisasi textview data deskripsi
+        val tvAge: TextView = findViewById(R.id.desc_text_age)
+        val tvTemp: TextView = findViewById(R.id.desc_text_temp)
+        val tvDiameter: TextView = findViewById(R.id.desc_text_diameter)
+        val tvWeight: TextView = findViewById(R.id.desc_text_weight)
+
+
         val people = intent.getSerializableExtra("planet") as? Planet
         val pPhoto = people?.photo?.toInt()
         val pName = people?.name.toString()
         val pDetail = people?.address.toString()
+
+//        get data
+        val descAge = people?.age?.toString()
+        val descTemp = people?.surfaceTemp?.toString()
+        val descDiameter = people?.diameter?.toString()
+        val descWeight = people?.mass?.toString()
 
         textPlanet.text = pName
         Glide.with(this)
@@ -35,6 +48,12 @@ class DetailPlanetActivity : AppCompatActivity() {
             .apply(RequestOptions())
             .into(imgPlanet)
         textDescription.text = pDetail
+
+        tvAge.text = descAge
+        tvTemp.text = descTemp
+        tvDiameter.text = descDiameter
+        tvWeight.text = descWeight
+
     }
 
     override fun onSupportNavigateUp(): Boolean {
