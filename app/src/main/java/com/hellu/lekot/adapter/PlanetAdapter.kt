@@ -7,8 +7,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.hellu.lekot.R
 import com.hellu.lekot.OnClickListener
+import com.hellu.lekot.R
 import com.hellu.lekot.data.Planet
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -26,11 +26,11 @@ class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(userList[position])
-        holder.itemView.setOnClickListener(View.OnClickListener {
+        holder.itemView.setOnClickListener {
             if (listener != null) {
                 listener!!.onClickEvent(userList[position])
             }
-        })
+        }
     }
 
     override fun getItemCount(): Int {

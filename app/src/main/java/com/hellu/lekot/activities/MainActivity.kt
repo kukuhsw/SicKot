@@ -1,24 +1,23 @@
 package com.hellu.lekot.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hellu.lekot.OnClickListener
 import com.hellu.lekot.R
 import com.hellu.lekot.adapter.PlanetAdapter
 import com.hellu.lekot.data.Planet
-import com.hellu.lekot.ext.afterTextChanged
-import com.hellu.lekot.ext.showToast
+import com.hellu.lekot.extension.afterTextChanged
+import com.hellu.lekot.extension.showToast
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvPlanet: RecyclerView
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         getUserList()
 
-        editTextSearch.afterTextChanged { filter(it.toString()) }
+        editTextSearch.afterTextChanged { filter(it) }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.getItemId()
+        val id = item.itemId
         if (id == R.id.action_profile) {
             val moveIntent = Intent(this@MainActivity, ProfileActivity::class.java)
             startActivity(moveIntent)
@@ -69,7 +68,7 @@ class MainActivity : AppCompatActivity() {
     private fun filter(text: String) {
         val filteredNames = ArrayList<Planet>()
         users.filterTo(filteredNames) {
-            it.name.toLowerCase().contains(text.toLowerCase())
+            it.name.toLowerCase(Locale.ROOT).contains(text.toLowerCase(Locale.ROOT))
         }
         myAdapter!!.filterList(filteredNames)
     }

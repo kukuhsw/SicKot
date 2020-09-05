@@ -1,9 +1,9 @@
 package com.hellu.lekot.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.hellu.lekot.R
@@ -32,7 +32,7 @@ class DetailPlanetActivity : AppCompatActivity() {
 
 
         val people = intent.getSerializableExtra("planet") as? Planet
-        val pPhoto = people?.photo?.toInt()
+        val pPhoto = people?.photo
         val pName = people?.name.toString()
         val pDetail = people?.address.toString()
 

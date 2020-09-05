@@ -2,7 +2,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.MainActivity">
@@ -26,21 +25,24 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
-                android:paddingStart="10dp"
-                android:src="@drawable/search" />
+                android:layout_marginStart="15dp"
+                android:src="@drawable/search"
+                android:contentDescription="@string/search" />
 
             <EditText
                 android:id="@+id/editTextSearch"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@id/imgSearch"
+                android:layout_toEndOf="@id/imgSearch"
                 android:background="@drawable/button"
                 android:fontFamily="@font/museosans"
-                android:hint="Ketikan yang dicari..."
-                android:paddingStart="10dp"
+                android:hint="@string/ketikan_yang_dicari"
+                android:layout_marginStart="15dp"
                 android:textAlignment="center"
-                android:textColor="@color/colorBlack" />
+                android:textColor="@color/colorBlack"
+                android:inputType="text"
+                android:autofillHints="" />
         </RelativeLayout>
 
 

@@ -5,6 +5,6 @@
         android:id="@+id/action_profile"
         android:icon="@drawable/account_circle"
         app:showAsAction="ifRoom"
-        android:title="Compose">
+        android:title="@string/compose">
     </item>
 </menu>

@@ -3,10 +3,6 @@ package com.hellu.lekot.data
 import com.hellu.lekot.R
 import java.io.Serializable
 
-/**
- * Created by Govind on 3/19/2018.
- */
-
 class Planet(val name: String, val address: String, val photo: Int, val surfaceTemp:Int, val age:Double, val diameter:Int, val mass:Int) : Serializable {
 
     companion object {
