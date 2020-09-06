@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="260dp"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
     android:paddingLeft="22dp"
@@ -15,12 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="250dp">
 
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/iv_item_photo"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginEnd="16dp"
             tools:src="@android:color/darker_gray" />
 
         <LinearLayout
@@ -39,6 +38,7 @@
                 android:layout_marginBottom="4dp"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                android:textAlignment="center"
                 tools:text="@string/planet_name" />
 
             <TextView
@@ -48,6 +48,7 @@
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:layout_marginEnd="10dp"
+                android:textAlignment="center"
                 tools:text="@string/detail" />
         </LinearLayout>
 

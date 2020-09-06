@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.hellu.lekot.OnClickListener
 import com.hellu.lekot.R
-import com.hellu.lekot.adapter.PlanetAdapter
 import com.hellu.lekot.adapter.RecyclerViewAdapter
 import com.hellu.lekot.data.Planet
 import com.hellu.lekot.data.PlanetData
@@ -20,35 +19,18 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var rvPlanet: RecyclerView
     private lateinit var rvLargePlanet: RecyclerView
-
-//    add
-    private var myAdapter: PlanetAdapter? = null
-    private var users = ArrayList<Planet>()
-
-    //    add
-    private var planetAdapter: RecyclerViewAdapter? = null
     private var planets = ArrayList<PlanetData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportActionBar?.let {
-            it.title = "Home"
-        }
-
-        rvPlanet = findViewById(R.id.rv_planets)
-        rvPlanet.setHasFixedSize(true)
-
         rvLargePlanet = findViewById(R.id.rv_LargePlanet)
         rvLargePlanet.setHasFixedSize(true)
 
         openListPlanet(btnFilter)
         openGridPlanet(btnGrid)
-
-//        getUserList()
         showPlanetList()
 
     }
@@ -92,15 +74,6 @@ class MainActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-    private fun getUserList() {
-        rvPlanet.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        users = Planet.getPlanetList()
-        myAdapter = PlanetAdapter(users)
-        myAdapter!!.setListener(listener)
-        rvPlanet.adapter = myAdapter
-    }
-
 
 
     private val listener = object : OnClickListener {

@@ -1,139 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1e1632"
     tools:context=".activities.MainActivity">
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/tv_banner_top"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:text="@string/banner_list"
-            android:textSize="25sp"
-            android:fontFamily="@font/museosans"
-            android:textStyle="bold"
-            />
-
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnFilter"
+            android:id="@+id/card_top"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_below="@+id/tv_banner_top"
+            android:layout_height="220dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="20dp"
-            app:cardBackgroundColor="@color/colorPrimaryDark">
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/tv_banner_mid"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnFilter"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:text="@string/banner_grid"
-            android:textSize="25sp"
-            android:fontFamily="@font/museosans"
-            android:textStyle="bold"
-            />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/btnGrid"
-            android:layout_width="match_parent"
-            android:layout_height="140dp"
-            android:layout_below="@+id/tv_banner_mid"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="20dp"
-            app:cardBackgroundColor="@color/colorAccent">
-
-        </androidx.cardview.widget.CardView>
-
-
-        <RelativeLayout
-            android:id="@+id/rvSearch"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnFilter"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/button"
-            android:visibility="gone">
+            android:layout_marginEnd="20dp"
+            app:cardPreventCornerOverlap="false"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp">
 
             <ImageView
-                android:id="@+id/imgSearch"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="15dp"
-                android:contentDescription="@string/search"
-                android:src="@drawable/search" />
-
-            <EditText
-                android:id="@+id/editTextSearch"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="15dp"
-                android:layout_toEndOf="@id/imgSearch"
-                android:autofillHints=""
-                android:background="@drawable/button"
-                android:fontFamily="@font/museosans"
-                android:hint="@string/ketikan_yang_dicari"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textColor="@color/colorBlack" />
-        </RelativeLayout>
+                android:layout_height="wrap_content"
+                android:src="@drawable/bn_universe"
+                android:scaleType="fitXY"
+                />
 
+        </androidx.cardview.widget.CardView>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_planets"
+        <LinearLayout
+            android:id="@+id/ll_top"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btnGrid"
-            android:layout_marginBottom="10dp"
-            android:visibility="gone"
-            tools:listitem="@layout/item_row_galaxy" />
+            android:layout_height="match_parent"
+            android:layout_below="@id/card_top"
+            android:layout_marginTop="20dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_banner_bottom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btnGrid"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:text="@string/slider_planet"
-            android:textSize="25sp"
-            android:fontFamily="@font/museosans"
-            android:textStyle="bold"
-            />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginStart="10dp"
+                    app:cardBackgroundColor="#639cd9"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                    <ImageView
+                        android:layout_width="88dp"
+                        android:layout_height="88dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/view_list_outline"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginEnd="10dp"
+                    app:cardBackgroundColor="#5454c5"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                    <ImageView
+                        android:layout_width="66dp"
+                        android:layout_height="66dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/view_grid_outline"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+        </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_LargePlanet"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_banner_bottom"
+            android:layout_below="@id/ll_top"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             tools:listitem="@layout/item_large_layout" />
 
 
     </RelativeLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

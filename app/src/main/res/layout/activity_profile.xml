@@ -32,7 +32,7 @@
                     android:background="@color/colorBlack"
                     android:paddingTop="10dp"
                     android:paddingBottom="10dp"
-                    android:src="@drawable/mars" />
+                    tools:src="@android:color/darker_gray" />
 
 
 

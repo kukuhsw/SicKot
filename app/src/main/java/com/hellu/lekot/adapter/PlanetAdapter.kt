@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.hellu.lekot.OnClickListener
 import com.hellu.lekot.R
 import com.hellu.lekot.data.Planet
@@ -47,7 +46,6 @@ class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adap
             tvDescription?.text = user.address
             Glide.with(itemView.context)
                 .load(user.photo)
-                .apply(RequestOptions().override(55, 55))
                 .into(ivPlanet)
 
         }

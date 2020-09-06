@@ -14,7 +14,7 @@ import com.hellu.lekot.adapter.PlanetAdapter
 import com.hellu.lekot.data.Planet
 import com.hellu.lekot.extension.afterTextChanged
 import com.hellu.lekot.extension.showToast
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_search_planet.*
 import java.io.Serializable
 import java.util.*
 import kotlin.collections.ArrayList
@@ -35,7 +35,7 @@ class SearchPlanetActivity : AppCompatActivity() {
             it.setDisplayHomeAsUpEnabled(true)
         }
 
-        rvPlanet = findViewById(R.id.rv_planets)
+        rvPlanet = findViewById(R.id.rv_planets)!!
         rvPlanet.setHasFixedSize(true)
 
         getUserList()
