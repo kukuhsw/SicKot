@@ -11,14 +11,67 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/tv_banner_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/banner_list"
+            android:textSize="25sp"
+            android:fontFamily="@font/museosans"
+            android:textStyle="bold"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnFilter"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/tv_banner_top"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/colorPrimaryDark">
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_banner_mid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnFilter"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/banner_grid"
+            android:textSize="25sp"
+            android:fontFamily="@font/museosans"
+            android:textStyle="bold"
+            />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnGrid"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:layout_below="@+id/tv_banner_mid"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/colorAccent">
+
+        </androidx.cardview.widget.CardView>
+
+
         <RelativeLayout
             android:id="@+id/rvSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/btnFilter"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:background="@drawable/button">
+            android:background="@drawable/button"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/imgSearch"
@@ -26,33 +79,58 @@
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="15dp"
-                android:src="@drawable/search"
-                android:contentDescription="@string/search" />
+                android:contentDescription="@string/search"
+                android:src="@drawable/search" />
 
             <EditText
                 android:id="@+id/editTextSearch"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_alignParentTop="true"
+                android:layout_marginStart="15dp"
                 android:layout_toEndOf="@id/imgSearch"
+                android:autofillHints=""
                 android:background="@drawable/button"
                 android:fontFamily="@font/museosans"
                 android:hint="@string/ketikan_yang_dicari"
-                android:layout_marginStart="15dp"
-                android:textAlignment="center"
-                android:textColor="@color/colorBlack"
                 android:inputType="text"
-                android:autofillHints="" />
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack" />
         </RelativeLayout>
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_heroes"
+            android:id="@+id/rv_planets"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/rvSearch"
+            android:layout_below="@id/btnGrid"
             android:layout_marginBottom="10dp"
+            android:visibility="gone"
             tools:listitem="@layout/item_row_galaxy" />
+
+        <TextView
+            android:id="@+id/tv_banner_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnGrid"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/slider_planet"
+            android:textSize="25sp"
+            android:fontFamily="@font/museosans"
+            android:textStyle="bold"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_LargePlanet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_banner_bottom"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="10dp"
+            tools:listitem="@layout/item_large_layout" />
 
 
     </RelativeLayout>
