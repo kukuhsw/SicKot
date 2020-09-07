@@ -49,10 +49,10 @@ class DetailPlanetActivity : AppCompatActivity() {
             .into(imgPlanet)
         textDescription.text = pDetail
 
-        tvAge.text = descAge
-        tvTemp.text = descTemp
-        tvDiameter.text = descDiameter
-        tvWeight.text = descWeight
+        tvAge.text = "age :$descAge"
+        tvTemp.text = "temperature $descTemp"
+        tvDiameter.text = "diameter: $descDiameter"
+        tvWeight.text = "weight: $descWeight"
 
     }
 

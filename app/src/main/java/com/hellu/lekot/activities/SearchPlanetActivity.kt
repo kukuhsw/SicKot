@@ -22,7 +22,6 @@ import kotlin.collections.ArrayList
 class SearchPlanetActivity : AppCompatActivity() {
     private lateinit var rvPlanet: RecyclerView
 
-    //    add
     private var myAdapter: PlanetAdapter? = null
     private var users = ArrayList<Planet>()
 

@@ -12,8 +12,7 @@ import com.hellu.lekot.data.Planet
 import de.hdodenhof.circleimageview.CircleImageView
 import java.util.*
 
-
-class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adapter<PlanetAdapter.ViewHolder>() {
+class HomeAdapter (private var userList: ArrayList<Planet>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
 
 
     private var listener: OnClickListener? = null
@@ -23,7 +22,7 @@ class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adap
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_row_galaxy, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_large_layout, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -42,11 +41,9 @@ class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adap
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(user: Planet) {
             val tvName = itemView.findViewById<TextView>(R.id.tv_item_name)
-            val tvDescription = itemView.findViewById<TextView>(R.id.tv_item_detail)
-            val ivPlanet = itemView.findViewById<CircleImageView>(R.id.img_item_photo)
+            val ivPlanet = itemView.findViewById<CircleImageView>(R.id.iv_item_photo)
 
             tvName?.text = user.name
-            tvDescription?.text = user.address
             Glide.with(itemView.context)
                 .load(user.photo)
                 .into(ivPlanet)

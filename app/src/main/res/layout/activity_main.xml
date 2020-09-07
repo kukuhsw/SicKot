@@ -96,16 +96,13 @@
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_LargePlanet"
-            android:layout_width="wrap_content"
+            android:id="@+id/rv_planets"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/ll_top"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/ll_top"
+            android:layout_marginHorizontal="14dp"
+            android:layout_marginVertical="20dp"
             tools:listitem="@layout/item_large_layout" />
-
 
     </RelativeLayout>
 
