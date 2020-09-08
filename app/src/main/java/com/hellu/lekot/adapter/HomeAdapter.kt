@@ -1,14 +1,16 @@
 package com.hellu.lekot.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.hellu.lekot.OnClickListener
 import com.hellu.lekot.R
 import com.hellu.lekot.data.Planet
+import com.hellu.lekot.utils.OnClickListener
 import de.hdodenhof.circleimageview.CircleImageView
 import java.util.*
 
@@ -40,8 +42,18 @@ class HomeAdapter (private var userList: ArrayList<Planet>) : RecyclerView.Adapt
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindItems(user: Planet) {
+            val cardBackground = itemView.findViewById<RelativeLayout>(R.id.card_large_planet)
             val tvName = itemView.findViewById<TextView>(R.id.tv_item_name)
             val ivPlanet = itemView.findViewById<CircleImageView>(R.id.iv_item_photo)
+
+            if(position %2 == 1)
+            {
+                cardBackground.setBackgroundColor(Color.parseColor("#ffee93"))
+            }
+            else
+            {
+                cardBackground.setBackgroundColor(Color.parseColor("#adf7b6"))
+            }
 
             tvName?.text = user.name
             Glide.with(itemView.context)

@@ -2,13 +2,11 @@ package com.hellu.lekot.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hellu.lekot.OnClickListener
+import com.hellu.lekot.utils.OnClickListener
 import com.hellu.lekot.R
 import com.hellu.lekot.adapter.PlanetAdapter
 import com.hellu.lekot.data.Planet
@@ -20,7 +18,7 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 
-class SearchPlanetActivity : AppCompatActivity() {
+class ListPlanetActivity : AppCompatActivity() {
     private lateinit var rvPlanet: RecyclerView
 
     private lateinit var myAdapter: PlanetAdapter
@@ -31,7 +29,7 @@ class SearchPlanetActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search_planet)
 
         supportActionBar?.let {
-            it.title = "Search Activity"
+            it.title = "List Activity"
             it.setDisplayHomeAsUpEnabled(true)
         }
 
@@ -43,21 +41,6 @@ class SearchPlanetActivity : AppCompatActivity() {
         getUserList()
 
         editTextSearch.afterTextChanged { filter(it) }
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.menu_main, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val id = item.itemId
-        if (id == R.id.action_profile) {
-            val moveIntent = Intent(this@SearchPlanetActivity, ProfileActivity::class.java)
-            startActivity(moveIntent)
-            return true
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     private fun getUserList() {

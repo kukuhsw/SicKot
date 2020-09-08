@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hellu.lekot.OnClickListener
+import com.hellu.lekot.utils.OnClickListener
 import com.hellu.lekot.R
 import com.hellu.lekot.adapter.HomeAdapter
 import com.hellu.lekot.data.Planet
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
     private fun openGridPlanet(btnGrid: CardView?) {
         if (btnGrid != null) {
             btnGrid.setOnClickListener {
-                val intent = Intent(this, GridActivity::class.java)
+                val intent = Intent(this, GridPlanetActivity::class.java)
                 startActivity(intent)
             }
         }
@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     private fun openListPlanet(btnFilter: CardView?) {
         if (btnFilter != null) {
             btnFilter.setOnClickListener {
-                val intent = Intent(this, SearchPlanetActivity::class.java)
+                val intent = Intent(this, ListPlanetActivity::class.java)
                 startActivity(intent)
             }
         }

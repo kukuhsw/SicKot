@@ -1,4 +1,4 @@
-package com.hellu.lekot
+package com.hellu.lekot.utils
 
 import com.hellu.lekot.data.Planet
 

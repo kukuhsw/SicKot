@@ -13,8 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.GridActivity"></activity>
-        <activity android:name=".activities.SearchPlanetActivity" />
+        <activity android:name=".activities.GridPlanetActivity"></activity>
+        <activity android:name=".activities.ListPlanetActivity" />
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".activities.DetailPlanetActivity" />
         <activity android:name=".activities.MainActivity" />
