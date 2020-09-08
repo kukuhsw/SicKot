@@ -10,11 +10,15 @@ import com.hellu.lekot.OnClickListener
 import com.hellu.lekot.R
 import com.hellu.lekot.data.Planet
 import de.hdodenhof.circleimageview.CircleImageView
-import java.util.*
 
 
-class PlanetAdapter(private var userList: ArrayList<Planet>) : RecyclerView.Adapter<PlanetAdapter.ViewHolder>() {
+class PlanetAdapter() : RecyclerView.Adapter<PlanetAdapter.ViewHolder>() {
 
+    private var userList: ArrayList<Planet> = arrayListOf()
+
+    fun setData(userList: ArrayList<Planet>){
+        this.userList = userList
+    }
 
     private var listener: OnClickListener? = null
 

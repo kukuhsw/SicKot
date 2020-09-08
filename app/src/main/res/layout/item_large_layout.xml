@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#1d1716">
+        android:background="#eeeeee">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_item_photo"

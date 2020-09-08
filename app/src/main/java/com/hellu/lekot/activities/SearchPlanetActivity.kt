@@ -19,10 +19,11 @@ import java.io.Serializable
 import java.util.*
 import kotlin.collections.ArrayList
 
+
 class SearchPlanetActivity : AppCompatActivity() {
     private lateinit var rvPlanet: RecyclerView
 
-    private var myAdapter: PlanetAdapter? = null
+    private lateinit var myAdapter: PlanetAdapter
     private var users = ArrayList<Planet>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +34,8 @@ class SearchPlanetActivity : AppCompatActivity() {
             it.title = "Search Activity"
             it.setDisplayHomeAsUpEnabled(true)
         }
+
+        myAdapter = PlanetAdapter()
 
         rvPlanet = findViewById(R.id.rv_planets)!!
         rvPlanet.setHasFixedSize(true)
@@ -60,9 +63,11 @@ class SearchPlanetActivity : AppCompatActivity() {
     private fun getUserList() {
         rvPlanet.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         users = Planet.getPlanetList()
-        myAdapter = PlanetAdapter(users)
-        myAdapter!!.setListener(listener)
+        myAdapter = PlanetAdapter()
+        myAdapter.setData(users)
+        myAdapter.setListener(listener)
         rvPlanet.adapter = myAdapter
+        myAdapter.notifyDataSetChanged()
     }
 
     private fun filter(text: String) {

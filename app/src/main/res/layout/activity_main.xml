@@ -78,14 +78,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="140dp"
                     android:layout_marginEnd="10dp"
-                    app:cardBackgroundColor="#5454c5"
                     app:cardCornerRadius="14dp"
                     app:cardElevation="4dp"
                     app:cardUseCompatPadding="true">
 
                     <ImageView
-                        android:layout_width="66dp"
-                        android:layout_height="66dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:layout_gravity="center"
+                        android:src="@drawable/bg_card_home"
+                        />
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:src="@drawable/view_grid_outline"
                         />
