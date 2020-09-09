@@ -28,4 +28,5 @@
     <string name="slider_planet">Slider Planet</string>
     <string name="banner_grid">Banner Grid</string>
     <string name="banner_list">Banner List</string>
+    <string name="exit">Exit</string>
 </resources>

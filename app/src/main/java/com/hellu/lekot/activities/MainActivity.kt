@@ -1,5 +1,7 @@
 package com.hellu.lekot.activities
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -9,13 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.hellu.lekot.utils.OnClickListener
 import com.hellu.lekot.R
 import com.hellu.lekot.adapter.HomeAdapter
 import com.hellu.lekot.data.Planet
 import com.hellu.lekot.extension.showToast
+import com.hellu.lekot.utils.OnClickListener
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -93,5 +96,15 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    override fun onBackPressed() {
+        AlertDialog.Builder(this)
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .setTitle("Closing Activity")
+            .setMessage("Are you sure you want to close this activity?")
+            .setPositiveButton("Yes",
+                DialogInterface.OnClickListener { dialog, which -> finish() })
+            .setNegativeButton("No", null)
+            .show()
+    }
 
 }

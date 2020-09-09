@@ -34,9 +34,11 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     private fun showPhotoProfile(imgProfile: CircleImageView?) {
-        val url = "https://media-exp1.licdn.com/dms/image/C5603AQGujT6VG_WVew/profile-displayphoto-shrink_800_800/0?e=1604534400&v=beta&t=YYRTJZ9i0cd3IMAnvTPWLyPN7x97LbaNWnsHc5qtPd0"
+        val url =
+            "https://media-exp1.licdn.com/dms/image/C5603AQGujT6VG_WVew/profile-displayphoto-shrink_800_800/0?e=1604534400&v=beta&t=YYRTJZ9i0cd3IMAnvTPWLyPN7x97LbaNWnsHc5qtPd0"
         if (imgProfile != null) {
-            Glide.with(this).load(url).placeholder(R.mipmap.ic_launcher).fitCenter().dontAnimate().into(imgProfile)
+            Glide.with(this).load(url).placeholder(R.mipmap.ic_launcher).fitCenter().dontAnimate()
+                .into(imgProfile)
         }
     }
 
@@ -49,11 +51,13 @@ class ProfileActivity : AppCompatActivity() {
     private fun showCardAward(mCardAward: ExpandableCardView) {
         mCardAward.cardTitle = "Award"
         mCardAward.cardDescription = "Mawapres Vokasi IPB, 1st Thinkubator"
-        mCardAward.setBackgroundColor(Color.parseColor("#fd746c"))    }
+        mCardAward.setBackgroundColor(Color.parseColor("#fd746c"))
+    }
 
     private fun showCardCertificate(mCardCertificate: ExpandableCardView) {
         mCardCertificate.cardTitle = "Certificate"
-        mCardCertificate.cardDescription = "IoT Architect, Flutter Expert, Golang Advance, Pengembangan ML"
+        mCardCertificate.cardDescription =
+            "IoT Architect, Flutter Expert, Golang Advance, Pengembangan ML"
         mCardCertificate.setBackgroundColor(Color.parseColor("#ffcc33"))
     }
 

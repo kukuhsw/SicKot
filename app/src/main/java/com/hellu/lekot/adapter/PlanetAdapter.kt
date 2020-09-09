@@ -52,12 +52,9 @@ class PlanetAdapter() : RecyclerView.Adapter<PlanetAdapter.ViewHolder>() {
             val tvDescription = itemView.findViewById<TextView>(R.id.tv_item_detail)
             val ivPlanet = itemView.findViewById<CircleImageView>(R.id.img_item_photo)
 
-            if(position %2 == 1)
-            {
+            if (position % 2 == 1) {
                 rvPlanet.setBackgroundColor(Color.parseColor("#ffee93"))
-            }
-            else
-            {
+            } else {
                 rvPlanet.setBackgroundColor(Color.parseColor("#adf7b6"))
             }
 

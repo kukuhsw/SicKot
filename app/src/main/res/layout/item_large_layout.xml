@@ -21,18 +21,23 @@
             android:id="@+id/iv_item_photo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             tools:src="@android:color/darker_gray" />
 
         <TextView
             android:id="@+id/tv_item_name"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginHorizontal="20dp"
+            android:background="#FFFF"
             android:gravity="center"
-            android:textAlignment="center"
             android:textSize="16sp"
             android:textStyle="bold"
             tools:text="@string/planet_name" />
+
 
     </RelativeLayout>
 

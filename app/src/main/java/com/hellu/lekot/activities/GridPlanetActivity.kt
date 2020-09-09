@@ -41,7 +41,7 @@ class GridPlanetActivity : AppCompatActivity() {
     }
 
     private fun displayStaggeredList() {
-        rvPlanet.layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
+        rvPlanet.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
         planets = Planet.getPlanetList()
         myAdapter = PlanetAdapter()
         myAdapter.setData(planets)
