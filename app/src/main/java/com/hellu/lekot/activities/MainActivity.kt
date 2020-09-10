@@ -98,12 +98,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         AlertDialog.Builder(this)
-            .setIcon(android.R.drawable.ic_dialog_alert)
-            .setTitle("Closing Activity")
-            .setMessage("Are you sure you want to close this activity?")
-            .setPositiveButton("Yes",
+            .setIcon(R.drawable.alert_box_outline)
+            .setTitle("Keluar Apps")
+            .setMessage("Benar mau keluar Apps?")
+            .setPositiveButton("Iya",
                 DialogInterface.OnClickListener { dialog, which -> finish() })
-            .setNegativeButton("No", null)
+            .setNegativeButton("Tidak", null)
             .show()
     }
 
