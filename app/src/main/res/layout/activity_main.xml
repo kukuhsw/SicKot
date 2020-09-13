@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/bn_universe"
                 android:scaleType="fitXY"
-                />
+                android:contentDescription="TODO" />
 
         </androidx.cardview.widget.CardView>
 
@@ -62,14 +62,14 @@
                         android:scaleType="fitXY"
                         android:layout_gravity="center"
                         android:src="@drawable/bg_card_home"
-                        />
+                        android:contentDescription="TODO" />
 
                     <ImageView
                         android:layout_width="63dp"
                         android:layout_height="63dp"
                         android:layout_gravity="center"
                         android:src="@drawable/view_list_outline"
-                        />
+                        android:contentDescription="TODO" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -95,14 +95,14 @@
                         android:scaleType="fitXY"
                         android:layout_gravity="center"
                         android:src="@drawable/bg_card_home"
-                        />
+                        android:contentDescription="TODO" />
 
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
                         android:src="@drawable/view_grid_outline"
-                        />
+                        android:contentDescription="TODO" />
 
                 </androidx.cardview.widget.CardView>
 

@@ -6,7 +6,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.hellu.lekot.R
 import com.hellu.lekot.adapter.HomeAdapter
 import com.hellu.lekot.data.Planet
-import com.hellu.lekot.extension.showToast
 import com.hellu.lekot.utils.OnClickListener
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.Serializable
@@ -86,7 +84,6 @@ class MainActivity : AppCompatActivity() {
     private val listener = object : OnClickListener {
         override fun onClickEvent(user: Planet) {
             sentDataPlanet(user)
-            showToast(user.name, Toast.LENGTH_SHORT)
         }
     }
 
